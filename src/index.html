@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Phase Client</title>
+    <link rel="stylesheet" href="style-new.css">
+  </head>
+  <body>
+    <section class="main-app">
+      <div class="blur">
+        <div class="menu-left">
+          <img class="logo-main" src="media/img/logo.ico">
+          <img src="media/img/globe-solid.svg" class="website-icon">
+          <a target="_blank" href="https://github.com"><img src="media/img/discord-brands.svg" class="discord-icon"></a>
+          <img src="media/img/cog-solid.svg" class="settings-icon">
+        </div>
+        <div class="menu-top">
+        <div>
+          <img class="main-x" src="media/img/X.png" onclick="javascript:window.close()">
+          </div>
+          <div class="user-login">
+            <div class="dropdown-content">
+              <a href="#" class="a">Login</a>
+              <a href="#" onclick="logout()">Log out</a>
+            </div>
+            <img src="media/img/unlogged.png" class="pfp">
+            <h1><span id="name">Account</span></h1>
+          </div>
+          <div class="lmt">
+            <img class="logo-main-text" src="media/img/phaseclient.png">
+          </div>
+        </div>
+        <div class="new-1">
+          <img src="media/img/new1.png" alt="new1" class="new1-img">
+          <h1>NEW WEBSITE</h1>
+          <p>We've added new cool website!</p>
+        </div>
+        <div class="new-2">
+          <img src="media/img/new2.webp" alt="new1" class="new2-img">
+          <h1>CLIENT REVIEW</h1>
+          <p>Check our client reviews!</p>
+        </div>
+        <div class="play">
+          <div class="play-v18">
+            <h1><b>1.8</b></h1>
+          </div>
+          <div class="play-soon">
+            <h1><b>more versions soon</b></h1>
+          </div>
+          <div class="play-btn" id="play-btn">
+            <h1>LAUNCH CLIENT</h1>
+          </div>
+        </div>
+        <h1 class="h1">PARTNERED SERVERS</h1>
+        <div class="servers">
+          <div class="ucraft">
+            <img src="media/img/UCRAFT.png">
+            <h1>U Craft</h1>
+            <p>IP: play.u-craft.fun</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <script src="preload.js"></script>
+    <script>
+      function login(){
+      document.getElementById("name").innerHTML = "CapekPro";
+      document.getElementsById("pfp").src = "media/img/capekpro.png";
+      }
+
+      function logout(){
+      document.getElementById("name").innerHTML = "Account";
+      document.getElementsByClassName("pfp").src = "media/img/ulogged.png";
+      }
+    </script>
+
+  </body>
+</html>
