@@ -1,29 +1,44 @@
-const { app, shell, BrowserWindow } = require('electron');
+const { app, shell, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
-
+const ipc = ipcMain;
 
 
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1220,
-    height: 735,
+    width: 1024,
+    height: 576,
     frame: false,
-    transparent: true,
+    // transparent: true,
     title: "Phase Client",
-    icon: "./src/media/img/logo.ico",
+    icon: "./src/assets/img/logo.ico",
     resizable: false,
     webPreferences: {
       nodeIntegration: true, // is default value after Electron v5
-      contextIsolation: true, // protect against prototype pollution
-      enableRemoteModule: false, // turn off remote
+      contextIsolation: false, // protect against prototype pollution
+      enableRemoteModule: true, // turn off remote
       preload: path.join(__dirname, "preload.js") // use a preload script
     }
   });
 
-  // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  setTimeout(() => {
+    mainWindow.setSize(1280, 720);
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  }, 4000)
 
+  // and load the index.html of the app.
+  mainWindow.loadFile(path.join(__dirname, 'splashscreen.html'));
+
+  ipc.on('minimizeApp', () => {
+    // console.log("clicked");
+    mainWindow.minimize();
+  });
+  
+  ipc.on('closeApp', () => {
+    // console.log("clicked");
+    mainWindow.close();
+  });
+  
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };

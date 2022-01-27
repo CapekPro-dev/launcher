@@ -1,4 +1,5 @@
 const { Client, Authenticator } = require('minecraft-launcher-core');
+
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
       const element = document.getElementById(selector)
