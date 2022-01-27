@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 const memmax = "3G";
 const memmin = "1G";
-    const playbtn = document.getElementById("play-btn");
+    const playbtn = document.querySelector('.launch__client');
     playbtn.addEventListener("click", clicked);
 function clicked(){
 const launcher = new Client();

@@ -4,9 +4,22 @@
 @keyframes launchOpen {
     0% {
         transform: translateX(-50%);
+        opacity: 0;
     }
     100% {
         transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes postOpen {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
     }
 }
 
@@ -147,10 +160,12 @@ img {
             transform: scale(1)
         }
         .profile__img {
+            transition: 180ms;
             width: 20%;
             border-radius: 5px;
         }
         .profile__name {
+            transition: 180ms;
             color: white;
             font-family: Poppins;
             margin-left: 5px;
@@ -244,7 +259,7 @@ img {
                 .launch__version {
                     padding: 5px 10px 5px 10px;
                     margin: 5px 5px 5px 5px;
-                    border-radius: 10px;
+                    border-radius: 25px;
                     // box-shadow: 0 0 5px $secondary-color;
                     border: 2px solid $secondary-color;
                 }
@@ -329,6 +344,9 @@ img {
         // overflow-x: hidden;
         // overflow-y: scroll;
         flex-direction: column;
+        animation: postOpen 1s ease-in-out;
+        // animation-delay: 1s;
+        // transform: translateX(50%);
         .post__item {
             width: 80%;
             height: 55%;
